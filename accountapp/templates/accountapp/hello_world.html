@@ -17,10 +17,12 @@
             </div>
         </form>
 
-        {% if hello_world_output %}
-        <h1>
-            {{ hello_world_output.text }}
-        </h1>
+        {% if hello_world_list %}
+            {% for hello_world in hello_world_list %}
+            <h4>
+                {{ hello_world.text }}
+            </h4>
+            {% endfor %}
         {% endif %}
 
     </div>
