@@ -21,45 +21,22 @@
     }
 
 </style>
-
+    {% if article_list %}
     <div class="container">
-      <div class="item1">
-        <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/340" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/260" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/400" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/510" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/250" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/200" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/440" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/320" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/290" alt="">
-      </div>
-      <div>
-          <img src="https://picsum.photos/200/420" alt="">
-      </div>
+        {% for article in article_list %}
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/card.html' with article=article %}
+        </a>
+        {% endfor %}
     </div>
+    <script src="{% static 'js/magicgrid.js' %}"></script>
+    {% else %}
+    <div class="text-center">
+        <h1>No Articles YET!</h1>
+    </div>
+    {% endif %}
+
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
 
     <div style="text-align: center">
         <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
@@ -67,7 +44,6 @@
         </a>
     </div>
 
-    <script src="{% static 'js/magicgrid.js' %}"></script>
 
 
 {% endblock %}

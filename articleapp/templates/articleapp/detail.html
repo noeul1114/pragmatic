@@ -4,24 +4,35 @@
 {% block content %}
 
   <div>
-    <div style="text-align: center; max-width: 500px; margin: 4rem auto;">
+    <div style="text-align: center; max-width: 700px; margin: 4rem auto;">
 
       <h1>
         {{ target_article.title }}
       </h1>
+      <h5>
+        {{ target_article.writer.profile.nickname }}
+      </h5>
+      <hr>
 
-      <img src="{{ target_article.image.url }}" alt="">
+      <img style="width: 100%; border-radius: 1rem; margin: 2rem 0;"
+              src="{{ target_article.image.url }}" alt="">
 
       <p>
         {{ target_article.content }}
       </p>
 
-      <a href="{% url 'articleapp:update' pk=target_article.pk %}">
-        <p>Update Article</p>
+      {% if target_article.writer == user %}
+      <a href="{% url 'articleapp:update' pk=target_article.pk %}"
+      class="btn btn-primary rounded-pill col-3">
+        Update
       </a>
-      <a href="{% url 'articleapp:delete' pk=target_article.pk %}">
-        <p>Delete Article</p>
+      <a href="{% url 'articleapp:delete' pk=target_article.pk %}"
+      class="btn btn-danger rounded-pill col-3">
+        Delete
       </a>
+      {% endif %}
+      <hr>
+
 
     </div>
   </div>
