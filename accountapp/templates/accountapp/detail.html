@@ -48,6 +48,13 @@
       {% endif %}
 
     </div>
+
+    <div>
+
+      {% include 'snippets/list_fragment.html' with article_list=object_list %}
+
+    </div>
+
   </div>
 
 {% endblock %}
