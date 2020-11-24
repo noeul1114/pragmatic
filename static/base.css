@@ -15,3 +15,9 @@
     text-align:center;
     margin: 2rem 0;
 }
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 13px;
+    }
+}
