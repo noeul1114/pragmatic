@@ -1,10 +1,8 @@
 from .base import *
 
 
-def read_secret(SECRET_NAME):
-    DOCKER_SECRET_DIR = "/run/secrets/"
-
-    file = open(DOCKER_SECRET_DIR + "SECRET_NAME")
+def read_secret(secret_name):
+    file = open('/run/secrets/' + secret_name)
     secret = file.read()
     file.close()
 
