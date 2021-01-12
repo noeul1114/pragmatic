@@ -1,6 +1,10 @@
 ### 이 git repository는 작정하고 장고 강좌에서 사용되는 소스코드를 포함합니다.
 
 
+유튜브 무료 20강 : https://www.youtube.com/watch?v=RWEZITw27Ts
+
+
+
 <p style="text-align: center; background-color: #539e43; color: #fff; padding: 0.8rem;"><strong>django , docker</strong> 실전 개발을 통해 <strong>한 단계 높은 개발자</strong>가 되어보세요!</p>
 <p style="background-color: #eeeeee; padding: 0.8rem 0.8rem 0.8rem 1rem;"><span style="color: #539e43;"><strong style="font-size: 1.05rem;">📣 확인해주세요!</strong></span><br />본 강좌는 튜토리얼에 해당하는 <strong>20강까지 무료로 제공</strong>됩니다. 앞선 강좌를 수강하신 이후 결제를 하셔도 무방합니다.</p>
 <h2></h2>
