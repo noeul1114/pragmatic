@@ -1,6 +1,9 @@
 ### 이 git repository는 작정하고 장고 강좌에서 사용되는 소스코드를 포함합니다.
 
 
+-----------------
+
+
 유튜브 무료 20강 : https://www.youtube.com/watch?v=RWEZITw27Ts
 
 Udemy : https://www.udemy.com/course/djust_go_django/?referralCode=1BD3F1A8ACFFA529CF9C
@@ -10,6 +13,9 @@ Udemy : https://www.udemy.com/course/djust_go_django/?referralCode=1BD3F1A8ACFFA
 인프런 : 오픈 예정
 
 구름EDU : 오픈예정
+
+
+--------------
 
 
 
