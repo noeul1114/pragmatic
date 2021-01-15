@@ -3,6 +3,11 @@
 
 유튜브 무료 20강 : https://www.youtube.com/watch?v=RWEZITw27Ts
 
+Udemy : https://www.udemy.com/course/djust_go_django/?referralCode=1BD3F1A8ACFFA529CF9C
+에듀캐스트 : https://educast.com/course/web-dev/YU53
+인프런 : 오픈 예정
+구름EDU : 오픈예정
+
 
 
 <p style="text-align: center; background-color: #539e43; color: #fff; padding: 0.8rem;"><strong>django , docker</strong> 실전 개발을 통해 <strong>한 단계 높은 개발자</strong>가 되어보세요!</p>
