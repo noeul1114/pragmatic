@@ -65,7 +65,7 @@ Udemy : https://www.udemy.com/course/djust_go_django/?referralCode=1BD3F1A8ACFFA
 </li>
 </ul>
 <p></p>
-<p>&nbsp;이 강좌는 모든 것을 하나하나 자세히 짚어주는 강좌가 아닙니다. <strong>현대 개발자에게 요구되는 자질은, '무엇을 아는지' 보다 '무엇을 할 수 있는지'</strong> 입니다.</p>
+<p>&nbsp;<strong>현대 개발자에게 요구되는 자질은, '무엇을 아는지' 보다 '무엇을 할 수 있는지'</strong> 입니다.</p>
 <p>&nbsp;본 강좌는 <strong>무엇을? 어떻게? 왜? </strong>하는지에 집중하여 실서비스 개발 및 배포를 진행, <strong>수강생들에게 '이런 사이트를 만들 수 있다' 라는 분명한 자신감을 만드는 것</strong>이 궁극적인 목표입니다.</p>
 <p></p>
 <p></p>
