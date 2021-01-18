@@ -6,11 +6,11 @@
 
 유튜브 무료 20강 : https://www.youtube.com/watch?v=RWEZITw27Ts
 
+인프런 : https://www.inflearn.com/course/장고-핀터레스트?inst=8197dd42
+
 Udemy : https://www.udemy.com/course/djust_go_django/?referralCode=1BD3F1A8ACFFA529CF9C
 
 에듀캐스트 : https://educast.com/course/web-dev/YU53
-
-인프런 : 오픈 예정
 
 구름EDU : 오픈예정
 
