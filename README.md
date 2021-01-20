@@ -8,11 +8,13 @@
 
 인프런 : https://www.inflearn.com/course/장고-핀터레스트?inst=8197dd42
 
-Udemy : https://www.udemy.com/course/djust_go_django/?referralCode=1BD3F1A8ACFFA529CF9C
+구름EDU : https://edu.goorm.io/lecture/25441/%EC%9E%91%EC%A0%95%ED%95%98%EA%B3%A0-%EC%9E%A5%EA%B3%A0-%ED%95%80%ED%84%B0%EB%A0%88%EC%8A%A4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0
 
 에듀캐스트 : https://educast.com/course/web-dev/YU53
 
-구름EDU : 오픈예정
+Udemy : https://www.udemy.com/course/djust_go_django/?referralCode=1BD3F1A8ACFFA529CF9C
+
+
 
 
 --------------
