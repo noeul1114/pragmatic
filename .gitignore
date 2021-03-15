@@ -84,3 +84,6 @@ __pycache__/
 media/
 
 staticfiles/
+
+aws_pragmatic_key.pem
+docker-compose_traefik.yml

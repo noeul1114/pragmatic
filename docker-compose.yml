@@ -1,25 +1,70 @@
 version: "3.7"
 services:
+  reverse-proxy:
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.traefik-service.loadbalancer.server.port=9090
+    # The official v2 Traefik docker image
+    image: traefik:v2.4
+    # Enables the web UI and tells Traefik to listen to docker
+    command:
+      - "--pilot.token=69eafadd-d53a-44d4-b4e1-d5ab327e3968"
+      - "--api.insecure=true"
+      - "--providers.docker.endpoint=unix:///var/run/docker.sock"
+      - "--providers.docker.swarmMode=true"
+      - "--providers.docker.network=traefik-net"
+      - "--entrypoints.web.address=:80"
+    networks:
+      - network
+      - traefik-net
+    ports:
+      # The HTTP port
+      - "80:80"
+      # The Web UI (enabled by --api.insecure=true)
+      - "8080:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
   nginx:
     image: nginx:1.19.5
     networks:
       - network
+      - traefik-net
     volumes:
       - /home/django_course/nginx.conf:/etc/nginx/nginx.conf
       - static-volume:/data/static
       - media-volume:/data/media
-    ports:
-      - 80:80
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.nginx.entrypoints=web
+        - traefik.http.routers.nginx.rule=Host(`djangodockercourse.shop`) && PathPrefix(`/{mest:(media|static)}`)
+        - traefik.http.services.nginx-service.loadbalancer.server.port=80
   django_container_gunicorn:
     image: django_test_image:5
     networks:
       - network
+      - traefik-net
     volumes:
       - static-volume:/home/pragmatic/staticfiles
       - media-volume:/home/pragmatic/media
     secrets:
       - MYSQL_PASSWORD
       - DJANGO_SECRET_KEY
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.django.entrypoints=web
+        - traefik.http.routers.django.rule=Host(`djangodockercourse.shop`)
+        - traefik.http.services.django-service.loadbalancer.server.port=8000
+        - traefik.http.services.django-service.loadbalancer.healthcheck.path=/
+        - traefik.http.services.django-service.loadbalancer.healthcheck.interval=500ms
+        - traefik.http.services.django-service.loadbalancer.healthcheck.timeout=200ms
+        - traefik.http.services.django-service.loadbalancer.healthcheck.scheme=http
   mariadb:
     image: mariadb:10.5
     networks:
@@ -34,10 +79,18 @@ services:
       MYSQL_USER: django
       MYSQL_PASSWORD_FILE: /run/secrets/MYSQL_PASSWORD
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/MYSQL_ROOT_PASSWORD
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.mariadb-service.loadbalancer.server.port=3306
 
 
 networks:
   network:
+  traefik-net:
+    driver: overlay
+    ipam:
+      driver: default
 
 volumes:
   static-volume:
