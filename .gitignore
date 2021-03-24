@@ -79,3 +79,10 @@ db.sqlite3
 .idea/
 
 __pycache__/
+
+*.sqlite3
+*.pem
+*.yml
+
+media
+staticfiles
