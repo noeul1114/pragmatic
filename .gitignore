@@ -75,7 +75,14 @@ venv/
 .env
 
 db.sqlite3
+*.sqlite3
+*.yml
+*.pem
 
 .idea/
 
 __pycache__/
+
+media/
+
+staticfiles/
